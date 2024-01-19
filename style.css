@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 250px;
+    background-color: #f36eae;
+}
+
+.container {
+    border-left: 150px solid #333; 
+    border-right: 150px solid #333; 
+    padding: 300px; 
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: 40px;
+    text-align: 40px;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.gif-container {
+    position: absolute; 
+    top: 30%; 
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.gif-containerr {
+    position: absolute;
+    top: 30%;
+    left: 85%; 
+    transform: translate(-50%, -50%);
+}
+
+.countdown-container {
+    position: absolute; 
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f36eae;
+    padding: 0px;
+    border-radius: 0px;
+    
+  }
+  
+  h1 {
+    color: #333;
+  }
+
+
+  .morango {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/m27.png');
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    animation: quedaMorango 5s linear infinite; 
+  }
+  
+  @keyframes quedaMorango {
+    0% {
+        transform: translateY(3);
+    }
+    100% {
+        transform: translateY(98vh);
+    }
+  }
+
+  .gif-containerrr {
+    position: absolute; 
+    top: 70%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.gif-containerrrr {
+  position: absolute; 
+  top: 70%; 
+  left: 20%; 
+  transform: translate(-50%, -50%);
+}
+
+.gif-containerrrrr {
+  position: absolute; 
+  top: 70%; 
+  left: 80%; 
+  transform: translate(-50%, -50%);
+}
