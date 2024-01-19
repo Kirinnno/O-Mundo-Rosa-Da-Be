@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - O Mundo Rosa da Be</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: pink;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+        .countdown-container {
+            text-align: center;
+            margin-top: 200px;
+        }
+        #countdown {
+            font-size: 1.5em; 
+            margin-top: 20px;
+        }
+        .countdown-item {
+            display: inline-block;
+            margin: 0 5px; 
+        }
+        .countdown-number {
+            font-size: 1.5em; 
+            background-color: #333;
+            color: #fff;
+            padding: 8px; 
+            border-radius: 5px;
+        }
+        .countdown-label {
+            margin-top: 3px; 
+            font-size: 0.8em; 
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="countdown-container" id="countdownContainer">
+        <div id="countdown"></div>
+    </div>
+
+    <div class="container" id="loginContainer" style="display: none;">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="button" value="Entrar" onclick="checkLogin()">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const birthday = new Date('January 19, 2024 00:00:00 GMT-03:00');
+        
+            function updateCountdown() {
+                const currentDate = new Date();
+                const difference = birthday - currentDate;
+        
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+                    document.getElementById('countdown').innerHTML = `
+                        <div class="countdown-item">
+                            <div class="countdown-number">${days}</div>
+                            <div class="countdown-label">Dias</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">${hours}</div>
+                            <div class="countdown-label">Horas</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">${minutes}</div>
+                            <div class="countdown-label">Minutos</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-number">${seconds}</div>
+                            <div class="countdown-label">Segundos</div>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('countdownContainer').style.display = "none";
+                    document.getElementById('loginContainer').style.display = "block";
+                }
+            }
+        
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "Isabelle" && password === "Isa123") {
+                window.location.href = "conteudo.html";
+            } else {
+                alert("Credenciais inválidas. Tente novamente.");
+            }
+        }
+    </script>
+</body>
+</html>
